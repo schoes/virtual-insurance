@@ -12,7 +12,7 @@ export default class virtualInsurance extends React.Component {
   render() {
     return (
       <View>
-        <Pano source={asset('chess-world.jpg')}/>
+        <Pano source={asset('office.jpg')}/>
         <Text
           style={{
             backgroundColor: '#777879',
