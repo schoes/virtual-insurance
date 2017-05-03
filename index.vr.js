@@ -5,7 +5,8 @@ import {
     StyleSheet,
     Pano,
     Text,
-    View,
+    View, AmbientLight,
+    Sound
 } from 'react-vr';
 
 export default class virtualInsurance extends React.Component {
@@ -29,7 +30,7 @@ export default class virtualInsurance extends React.Component {
                 </Text>
                 <Sound
                     source={{
-                        mp3: asset('ambient.mp3'),
+                        mp3: asset('ambient.mp3')
                     }}
                 />
             </View>
