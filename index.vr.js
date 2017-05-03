@@ -1,23 +1,28 @@
 import React from "react";
-import {AppRegistry, asset, Pano, Sound, View} from "react-vr";
+import {AppRegistry} from "react-vr";
 import WelcomeScreen from "./Welcome";
+import {PAGE_HAUSRAT, PAGE_WELCOME} from "./constants";
+import Hausrat from "./Hausrat";
 
 
 export default class virtualInsurance extends React.Component {
     constructor() {
         super();
-        this.state = {textColor: 'white'};
+        this.styles = {
+            logo: {width: 1, height: 1}
+        }
+        this.state = {site: PAGE_WELCOME}
     }
 
     render() {
-        return (
-            <View>
+        if (this.state.site === PAGE_HAUSRAT) {
+            return (<Hausrat/>);
+        }
+        else {
+            return (
                 <WelcomeScreen></WelcomeScreen>
-                <Pano source={asset('surfing.jpg')}/>
-                <Sound source={{mp3: asset('ambient.mp3')}}/>
-            </View>
-        );
+            );
+        }
     }
 };
-
 AppRegistry.registerComponent('virtualInsurance', () => virtualInsurance);
