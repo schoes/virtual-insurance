@@ -12,7 +12,7 @@ export default class Flipchart extends React.Component {
     render = () => {
         return (
             <View>
-                <Image source={asset('chalckboard.jpg')}
+                <Image source={asset('chalkboard.jpg')}
                        style={{
                            position: 'absolute',
                            width: 4.5,
