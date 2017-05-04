@@ -96,7 +96,6 @@ export default class WelcomeScreen extends React.Component {
                 </View>
 
                <Transformer/>
-                <Future/>
 
             </View>
         );
