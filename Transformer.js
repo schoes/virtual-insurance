@@ -28,14 +28,22 @@ export default class Transformer extends React.Component {
                     this.stopTransformerVideo()
                 }}
                 style={{
-                    layoutOrigin: [0, 0, 0],
-                    borderColor: 'black',
-                    transform: [{translate: [5, 5, -30]}, {rotateX: 0}, {rotateY: 0}, {rotateZ: 0}],
+
                 }}>
-                <Video
-                    style={{display: 'flex', height: 10, width: 15}}
-                    source={asset('transformer.mov')}
-                    playerState={this.state.transformerPlayer}/>
+
+                    <Video
+                        style={{
+                            display: 'flex',
+                            height: 10,
+                            width: 15,
+                            position: 'absolute',
+                            width: 1,
+                            height: 1.4,
+                            layoutOrigin: [0, 0],
+                            transform: [{translate: [-5, 0, -5]}]
+                        }}
+                        source={asset('transformer.mov')}
+                        playerState={this.state.transformerPlayer}/>
             </View>
 
 
