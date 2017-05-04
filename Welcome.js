@@ -36,7 +36,6 @@ export default class WelcomeScreen extends React.Component {
         else {
             this.setState({sketch01InfoTextVisibility: 'none'});
         }
-        console.log('toggle sketch 01 function');
     }
 
     _toggleSketch02InfoText = () => {
@@ -46,7 +45,6 @@ export default class WelcomeScreen extends React.Component {
         else {
             this.setState({sketch02InfoTextVisibility: 'none'});
         }
-        console.log('toggle sketch 02 function');
     }
 
     playTransformerVideo = () => {
@@ -188,8 +186,6 @@ export default class WelcomeScreen extends React.Component {
                     transform: [{translate: [0, 0, 0]}, {rotateX: 0}, {rotateY: 270}, {rotateZ: 0}],
                 }}>
 
-                    <Transformer/>
-                    <Future/>
                 </View>
             </View>
         );
