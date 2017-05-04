@@ -37,7 +37,7 @@ export default class Future extends React.Component {
                         layoutOrigin: [0, 0],
                         transform: [{translate: [1, 4.7, -10]}]
                     }}
-                    source={asset('back2future.mov')}
+                    source={asset('back2future_low.mov')}
                     playerState={this.state.futurePlayer}/>
 
                 <Image style={{

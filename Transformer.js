@@ -28,27 +28,27 @@ export default class Transformer extends React.Component {
                     this.stopTransformerVideo()
                 }}>
 
-                    <Video
-                        style={{
-                            height: 10,
-                            width: 15,
-                            position: 'absolute',
-                            width: 3.5,
-                            height: 2,
-                            layoutOrigin: [0, 0],
-                            transform: [{translate: [1, 2.0, -10]}]
-                        }}
-                        source={asset('transformer.mov')}
-                        playerState={this.state.transformerPlayer}/>
-
-                    <Image style={{
+                <Video
+                    style={{
+                        height: 10,
+                        width: 15,
                         position: 'absolute',
-                        width: 6,
-                        height: 3,
+                        width: 3.5,
+                        height: 2,
                         layoutOrigin: [0, 0],
-                        transform: [{translate: [-0.2, 2.5, -10]}]
+                        transform: [{translate: [1, 2.0, -10]}]
                     }}
-                           source={asset('television.png')} />
+                    source={asset('transformer_low.mov')}
+                    playerState={this.state.transformerPlayer}/>
+
+                <Image style={{
+                    position: 'absolute',
+                    width: 6,
+                    height: 3,
+                    layoutOrigin: [0, 0],
+                    transform: [{translate: [-0.2, 2.5, -10]}]
+                }}
+                       source={asset('television.png')}/>
             </View>
 
 
