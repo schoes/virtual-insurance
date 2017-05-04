@@ -6,6 +6,7 @@ import {PAGE_HAUSRAT} from "./constants";
 import {asset, Image, MediaPlayerState, Pano, Text, View, VrButton} from "react-vr";
 import Flipchart from "./Flipchart";
 import Future from "./Future";
+import Transformer from "./Transformer";
 export default class WelcomeScreen extends React.Component {
 
     constructor() {
@@ -108,12 +109,12 @@ export default class WelcomeScreen extends React.Component {
                         <Image source={asset('claimsketch.png')}
                                style={{
                                    position: 'absolute',
-                                   width: 0.95,
-                                   height: 1.9,
-                                   marginTop: -1.12,
-                                   marginLeft: -1.52,
+                                   width: 1.2,
+                                   height: 2.2,
+                                   marginTop: -1.45,
+                                   marginLeft: -1.92,
                                    layoutOrigin: [0, 0],
-                                   transform: [{translate: [0, 0, -11.5]}]
+                                   transform: [{translate: [0, 0, -14.5]}]
                                }}/>
                     </VrButton>
 
@@ -121,9 +122,9 @@ export default class WelcomeScreen extends React.Component {
                         position: 'absolute',
                         display: 'flex',
                         layoutOrigin: [0, 0],
-                        marginTop: -1.12,
-                        marginLeft: -4.6,
-                        transform: [{translate: [0, 0, -11.5]}],
+                        marginTop: -1.45,
+                        marginLeft: -5,
+                        transform: [{translate: [0, 0, -14.5]}],
                     }}>
                         <Text style={{
                             display: this.state.sketch01InfoTextVisibility,
@@ -133,7 +134,7 @@ export default class WelcomeScreen extends React.Component {
                             backgroundColor: 'white',
                             opacity: 0.6,
                             width: 3,
-                            height: 1.2
+                            height: 1.56
                         }}>
                             Die Schadenskizzen sind ein wichtiger Bestandteil des Mobiliar Marketings.
                         </Text>
@@ -145,12 +146,12 @@ export default class WelcomeScreen extends React.Component {
                         <Image source={asset('claimsketch.png')}
                                style={{
                                    position: 'absolute',
-                                   width: 0.95,
-                                   height: 1.9,
-                                   marginTop: -1.12,
-                                   marginLeft: 0.17,
+                                   width: 1.2,
+                                   height: 2.2,
+                                   marginTop: -1.45,
+                                   marginLeft: 0.22,
                                    layoutOrigin: [0, 0],
-                                   transform: [{translate: [0, 0, -11.5]}]
+                                   transform: [{translate: [0, 0, -14.5]}]
                                }}/>
                     </VrButton>
 
@@ -158,9 +159,9 @@ export default class WelcomeScreen extends React.Component {
                         position: 'absolute',
                         display: 'flex',
                         layoutOrigin: [0, 0],
-                        marginTop: -1.12,
-                        marginLeft: 1.2,
-                        transform: [{translate: [0, 0, -11.5]}],
+                        marginTop: -1.45,
+                        marginLeft: 1.53,
+                        transform: [{translate: [0, 0, -14.5]}],
                     }}>
                         <Text style={{
                             display: this.state.sketch02InfoTextVisibility,
@@ -170,7 +171,7 @@ export default class WelcomeScreen extends React.Component {
                             backgroundColor: 'white',
                             opacity: 0.6,
                             width: 3,
-                            height: 1.2
+                            height: 1.56
                         }}>
                             Die Schadenskizzen sind ein wichtiger Bestandteil des Mobiliar Marketings.
                         </Text>
@@ -182,7 +183,9 @@ export default class WelcomeScreen extends React.Component {
                     layoutOrigin: [0, 0, 0],
                     transform: [{translate: [0, 0, 0]}, {rotateX: 0}, {rotateY: 270}, {rotateZ: 0}],
                 }}>
+
                     <Future/>
+                    <Transformer/>
 
                 </View>
             </View>
