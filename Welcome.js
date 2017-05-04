@@ -4,6 +4,8 @@
 import * as React from "react";
 import {PAGE_HAUSRAT} from "./constants";
 import {asset, Image, MediaPlayerState, Pano, Sound, Text, Video, View, VrButton} from "react-vr";
+import Transformer from "./Transformer";
+import Future from "./Future";
 export default class WelcomeScreen extends React.Component {
 
     constructor() {
@@ -88,45 +90,13 @@ export default class WelcomeScreen extends React.Component {
                             }}>
                                 Schliessen Sie keine Hausratsversicherung bei der Mobiliar ab.
                             </Text>
+
                         </View>
                     </VrButton>
                 </View>
 
-                <View
-                    onEnter={() => {
-                        this.playTransformerVideo()
-                    }}
-                    onExit={() => {
-                        this.stopTransformerVideo()
-                    }}
-                    style={{
-                        layoutOrigin: [0, 0, 0],
-                        borderColor: 'black',
-                        transform: [{translate: [5, 5, -30]}, {rotateX: 0}, {rotateY: 0}, {rotateZ: 0}],
-                    }}>
-                    <Video
-                        style={{display: 'flex', height: 10, width: 15}}
-                        source={asset('transformer.mov')}
-                        playerState={this.state.transformerPlayer}/>
-                </View>
-
-                <View
-                    onEnter={() => {
-                        this.playFutureVideo();
-                    }}
-                    onExit={() => {
-                        this.stopFutureVideo();
-                    }}
-                    style={{
-                        layoutOrigin: [0, 0, 0],
-                        borderColor: 'black',
-                        transform: [{translate: [-5, 5, -30]}, {rotateX: 0}, {rotateY: 0}, {rotateZ: 0}],
-                    }}>
-                    <Video
-                        style={{display: 'flex', height: 10, width: 15}}
-                        source={asset('back2future.mov')}
-                        playerState={this.state.futurePlayer}/>
-                </View>
+               <Transformer/>
+                <Future/>
 
             </View>
         );
