@@ -3,10 +3,9 @@
  */
 import * as React from "react";
 import {PAGE_HAUSRAT} from "./constants";
-import {asset, Image, MediaPlayerState, Pano, Sound, Text, View, VrButton} from "react-vr";
-import Transformer from "./Transformer";
-import Future from "./Future";
+import {asset, Image, MediaPlayerState, Pano, Text, View, VrButton} from "react-vr";
 import Flipchart from "./Flipchart";
+import Future from "./Future";
 export default class WelcomeScreen extends React.Component {
 
     constructor() {
@@ -70,8 +69,6 @@ export default class WelcomeScreen extends React.Component {
                  */
             }}>
                 <Pano source={asset('office_small.jpg')}/>
-                <Sound source={{mp3: asset('ambient.mp3')}}/>
-
                 <View style={{
                     position: 'absolute',
                     layoutOrigin: [0, 0, 0],
@@ -185,6 +182,7 @@ export default class WelcomeScreen extends React.Component {
                     layoutOrigin: [0, 0, 0],
                     transform: [{translate: [0, 0, 0]}, {rotateX: 0}, {rotateY: 270}, {rotateZ: 0}],
                 }}>
+                    <Future/>
 
                 </View>
             </View>
