@@ -37,16 +37,15 @@ export default class WelcomeScreen extends React.Component {
                     transform: [{translate: [0, 0, 0]}, {rotateX: 0}, {rotateY: 0}, {rotateZ: 0}],
                 }}>
                     <Text style={{
-                        backgroundColor: '#FFF',
                         fontSize: 0.8,
-                        color: 'red',
+                        color: '#FFF',
                         layoutOrigin: [0.5, 0.5],
                         paddingLeft: 0.2,
                         paddingRight: 0.2,
                         textAlign: 'center',
                         textAlignVertical: 'center',
                         transform: [{translate: [0, 0, -5]}]
-                    }}>Mitte</Text>
+                    }}>Willkommen</Text>
                 </View>
                 <View style={{
                     layoutOrigin: [0, 0, 0],
