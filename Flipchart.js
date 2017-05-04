@@ -22,14 +22,23 @@ export default class Flipchart extends React.Component {
                        }}
                 >
                     <Text style={{
-                        fontSize: 0.3,
+                        fontSize: 0.5,
                         color: 'white',
                         layoutOrigin: [0.5, 0.5],
                         textAlign: 'center',
                         textAlignVertical: 'center',
-                        transform: [{translate: [0.6, 0.3, -5]}]
+                        transform: [{translate: [1, 0, -5]}]
                     }}>
-                        Willkommen bei der Mobiliar
+                        *** VIRTUAL INSURANCE ***
+
+                        •  APPROACH - set up dummy project
+                        •  RESULT -  virtual mobi office
+                        •  DEMO -    grab the vr goggle
+                        •  SUMMARY - young and buggy
+                                     technology
+                        •  RECOMMENDATION - organize cash to realize the project
+
+                        *******************************
                     </Text>
                 </Image>
 
