@@ -27,18 +27,24 @@ export default class Flipchart extends React.Component {
                         layoutOrigin: [0.5, 0.5],
                         textAlign: 'center',
                         textAlignVertical: 'center',
-                        transform: [{translate: [1, 0, -5]}]
+                        transform: [{translate: [1, -3, -5]}]
                     }}>
-                        *** VIRTUAL INSURANCE ***
+                        ** VIRTUAL INSURANCE **
 
-                        •  APPROACH - set up dummy project
-                        •  RESULT -  virtual mobi office
-                        •  DEMO -    grab the vr goggle
-                        •  SUMMARY - young and buggy
-                                     technology
-                        •  RECOMMENDATION - organize cash to realize the project
-
-                        *******************************
+                        •  APPROACH:
+                            set up dummy project
+                        •  RESULT:
+                            virtual mobi office
+                        •  DEMO:
+                            grab the vr goggle
+                        •  SUMMARY:
+                            young and buggy
+                            technology
+                        •  RECOMMENDATION:
+                            organize
+                            cash to realize
+                            the project
+                        ************************
                     </Text>
                 </Image>
 
