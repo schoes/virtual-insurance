@@ -3,7 +3,10 @@
  */
 import * as React from "react";
 import {PAGE_HAUSRAT} from "./constants";
-import {asset, Image, Pano, Sound, Text, View, VrButton} from "react-vr";
+import {
+    asset, Image, Pano, Sound, Text, View, VrButton, MediaPlayerState,
+    VideoControl,Video
+} from "react-vr";
 export default class WelcomeScreen extends React.Component {
 
     constructor() {
@@ -11,7 +14,8 @@ export default class WelcomeScreen extends React.Component {
 
         this.state = {
             textColor: 'blue',
-            infoTextVisibility: 'none'
+            infoTextVisibility: 'none',
+            playerState: new MediaPlayerState({autoPlay: true, muted: false}), // init with muted, autoPlay
         }
     }
 
@@ -28,7 +32,7 @@ export default class WelcomeScreen extends React.Component {
     render = () => {
         return (
             <View>
-                <Pano source={asset('office_small.jpg')}/>
+                <Pano source={asset('office_01.jpg')}/>
                 <View>
                     <Sound source={{mp3: asset('ambient.mp3')}}/>
                 </View>
@@ -78,6 +82,21 @@ export default class WelcomeScreen extends React.Component {
                             </Text>
                         </View>
                     </VrButton>
+                </View>
+
+
+                <View style={{
+                    layoutOrigin: [0, 0, 0],
+                    transform: [{translate: [0, 0, 0]}, {rotateX: 0}, {rotateY: 0}, {rotateZ: 0}],
+                }}>
+                    <Video
+                        style={{height: 10, width: 10}}
+                        source={asset('tv.webm')}
+                        playerState={this.state.playerState} />
+                    <VideoControl
+                        style={{height: 10, width: 10}}
+                        playerState={this.state.playerState} />
+
                 </View>
             </View>
 
