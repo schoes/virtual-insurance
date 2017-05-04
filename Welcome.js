@@ -5,6 +5,7 @@ import * as React from "react";
 import {PAGE_HAUSRAT} from "./constants";
 import {asset, Image, MediaPlayerState, Pano, Sound, Text, View, VrButton} from "react-vr";
 import Transformer from "./Transformer";
+import Future from "./Future";
 import Flipchart from "./Flipchart";
 export default class WelcomeScreen extends React.Component {
 
@@ -109,11 +110,11 @@ export default class WelcomeScreen extends React.Component {
                     <VrButton onEnter={() => this._toggleSketch01InfoText()}
                               onExit={() => this._toggleSketch01InfoText()}>
 
-                        <Image source={asset('claimsketch_01.jpg')}
+                        <Image source={asset('claimsketch.png')}
                                style={{
                                    position: 'absolute',
                                    width: 0.95,
-                                   height: 1.2,
+                                   height: 1.9,
                                    marginTop: -1.12,
                                    marginLeft: -1.52,
                                    layoutOrigin: [0, 0],
@@ -146,11 +147,11 @@ export default class WelcomeScreen extends React.Component {
                     <VrButton onEnter={() => this._toggleSketch02InfoText()}
                               onExit={() => this._toggleSketch02InfoText()}>
 
-                        <Image source={asset('claimsketch_01.jpg')}
+                        <Image source={asset('claimsketch.png')}
                                style={{
                                    position: 'absolute',
                                    width: 0.95,
-                                   height: 1.2,
+                                   height: 1.9,
                                    marginTop: -1.12,
                                    marginLeft: 0.17,
                                    layoutOrigin: [0, 0],
@@ -188,6 +189,7 @@ export default class WelcomeScreen extends React.Component {
                 }}>
 
                     <Transformer/>
+                    <Future/>
                 </View>
             </View>
         );

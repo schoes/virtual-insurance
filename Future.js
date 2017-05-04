@@ -1,5 +1,5 @@
 import * as React from "react";
-import {asset, MediaPlayerState, Video, View} from "react-vr";
+import {asset, Image, MediaPlayerState, Video, View} from "react-vr";
 export default class Future extends React.Component {
 
     constructor() {
@@ -20,24 +20,34 @@ export default class Future extends React.Component {
 
     render = () => {
         return (
-
-
             <View
                 onEnter={() => {
                     this.playFutureVideo();
                 }}
                 onExit={() => {
                     this.stopFutureVideo();
-                }}
-                style={{
-                    layoutOrigin: [0, 0, 0],
-                    borderColor: 'black',
-                    transform: [{translate: [-5, 5, -30]}, {rotateX: 0}, {rotateY: 0}, {rotateZ: 0}],
                 }}>
                 <Video
-                    style={{display: 'flex', height: 10, width: 15}}
+                    style={{
+                        height: 10,
+                        width: 15,
+                        position: 'absolute',
+                        width: 3.5,
+                        height: 2,
+                        layoutOrigin: [0, 0],
+                        transform: [{translate: [1, 4.7, -10]}]
+                    }}
                     source={asset('back2future.mov')}
                     playerState={this.state.futurePlayer}/>
+
+                <Image style={{
+                    position: 'absolute',
+                    width: 6,
+                    height: 3,
+                    layoutOrigin: [0, 0],
+                    transform: [{translate: [-0.2, 5.2, -10]}]
+                }}
+                       source={asset('television.png')} />
             </View>
 
 
