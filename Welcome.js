@@ -64,6 +64,7 @@ export default class WelcomeScreen extends React.Component {
                         <Image source={asset('home.png')}
                                style={{width: 1, height: 1}}/>
 
+                        
                         <View style={{display: this.state.infoTextVisibility}}>
                             <Text style={{
                                 fontSize: 0.2,
