@@ -3,9 +3,11 @@
 // If you want to modify your application, start in "index.vr.js"
 // Auto-generated content.
 import {VRInstance} from "react-vr-web";
+import * as SimpleRayCaster from "simple-raycaster";
 
 function init(bundle, parent, options) {
     const vr = new VRInstance(bundle, 'virtualInsurance', parent, {
+        raycasters: [SimpleRayCaster],
         // Add custom options here
         cusorVisibility: 'visible',
         ...options,
