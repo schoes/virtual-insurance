@@ -3,10 +3,7 @@
  */
 import * as React from "react";
 import {PAGE_HAUSRAT} from "./constants";
-import {
-    asset, Image, Pano, Sound, Text, View, VrButton, MediaPlayerState,
-    VideoControl,Video
-} from "react-vr";
+import {asset, Image, MediaPlayerState, Pano, Sound, Text, Video, View, VrButton} from "react-vr";
 export default class WelcomeScreen extends React.Component {
 
     constructor() {
@@ -15,7 +12,8 @@ export default class WelcomeScreen extends React.Component {
         this.state = {
             textColor: 'blue',
             infoTextVisibility: 'none',
-            playerState: new MediaPlayerState({autoPlay: true, muted: false}), // init with muted, autoPlay
+            transformerPlayer: new MediaPlayerState({autoPlay: false, muted: false}), // init with muted, autoPlay
+            futurePlayer: new MediaPlayerState({autoPlay: false, muted: false}), // init with muted, autoPlay
         }
     }
 
@@ -28,14 +26,24 @@ export default class WelcomeScreen extends React.Component {
         }
         console.log('test button click event');
     }
+    playTransformerVideo = () => {
+        this.state.transformerPlayer.play();
+    }
+    playFutureVideo = () => {
+        this.state.futurePlayer.play();
+    }
+    stopTransformerVideo = () => {
+        this.state.transformerPlayer.pause();
+    }
+    stopFutureVideo = () => {
+        this.state.futurePlayer.pause();
+    }
 
     render = () => {
         return (
             <View>
-                <Pano source={asset('office_01.jpg')}/>
-                <View>
-                    <Sound source={{mp3: asset('ambient.mp3')}}/>
-                </View>
+                <Pano source={asset('office_small.jpg')}/>
+                <Sound source={{mp3: asset('ambient.mp3')}}/>
                 <View style={{
                     layoutOrigin: [0, 0, 0],
                     transform: [{translate: [0, 0, 0]}, {rotateX: 0}, {rotateY: 0}, {rotateZ: 0}],
@@ -84,26 +92,43 @@ export default class WelcomeScreen extends React.Component {
                     </VrButton>
                 </View>
 
-
-                <View style={{
-                    layoutOrigin: [0, 0, 0],
-                    transform: [{translate: [0, 0, 0]}, {rotateX: 0}, {rotateY: 0}, {rotateZ: 0}],
-                }}>
+                <View
+                    onEnter={() => {
+                        this.playTransformerVideo()
+                    }}
+                    onExit={() => {
+                        this.stopTransformerVideo()
+                    }}
+                    style={{
+                        layoutOrigin: [0, 0, 0],
+                        borderColor: 'black',
+                        transform: [{translate: [5, 5, -30]}, {rotateX: 0}, {rotateY: 0}, {rotateZ: 0}],
+                    }}>
                     <Video
-                        style={{height: 10, width: 10}}
-                        source={asset('tv.webm')}
-                        playerState={this.state.playerState} />
-                    <VideoControl
-                        style={{height: 10, width: 10}}
-                        playerState={this.state.playerState} />
-
+                        style={{display: 'flex', height: 10, width: 15}}
+                        source={asset('transformer.mov')}
+                        playerState={this.state.transformerPlayer}/>
                 </View>
+
+                <View
+                    onEnter={() => {
+                        this.playFutureVideo();
+                    }}
+                    onExit={() => {
+                        this.stopFutureVideo();
+                    }}
+                    style={{
+                        layoutOrigin: [0, 0, 0],
+                        borderColor: 'black',
+                        transform: [{translate: [-5, 5, -30]}, {rotateX: 0}, {rotateY: 0}, {rotateZ: 0}],
+                    }}>
+                    <Video
+                        style={{display: 'flex', height: 10, width: 15}}
+                        source={asset('back2future.mov')}
+                        playerState={this.state.futurePlayer}/>
+                </View>
+
             </View>
-
-
-
-
-        )
-            ;
+        );
     };
 }
