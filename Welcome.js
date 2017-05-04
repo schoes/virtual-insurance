@@ -3,9 +3,9 @@
  */
 import * as React from "react";
 import {PAGE_HAUSRAT} from "./constants";
-import {asset, Image, MediaPlayerState, Pano, Sound, Text, Video, View, VrButton} from "react-vr";
+import {asset, Image, MediaPlayerState, Pano, Sound, Text, View, VrButton} from "react-vr";
 import Transformer from "./Transformer";
-import Future from "./Future";
+import Flipchart from "./Flipchart";
 export default class WelcomeScreen extends React.Component {
 
     constructor() {
@@ -97,17 +97,7 @@ export default class WelcomeScreen extends React.Component {
                     layoutOrigin: [0, 0, 0],
                     transform: [{translate: [0, 0, 0]}, {rotateX: 0}, {rotateY: 90}, {rotateZ: 0}]
                 }}>
-
-                    <Text style={{
-                        fontSize: 0.5,
-                        color: 'red',
-                        layoutOrigin: [0.5, 0.5],
-                        textAlign: 'center',
-                        textAlignVertical: 'center',
-                        transform: [{translate: [0, 0, -5]}]
-                    }}>
-                        Left
-                    </Text>
+                    <Flipchart/>
                 </View>
 
                 <View style={{
