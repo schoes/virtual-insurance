@@ -1,5 +1,5 @@
 import * as React from "react";
-import {asset, MediaPlayerState, Video, View} from "react-vr";
+import {asset, Image, MediaPlayerState, Video, View} from "react-vr";
 export default class Transformer extends React.Component {
 
     constructor() {
@@ -26,24 +26,29 @@ export default class Transformer extends React.Component {
                 }}
                 onExit={() => {
                     this.stopTransformerVideo()
-                }}
-                style={{
-
                 }}>
 
                     <Video
                         style={{
-                            display: 'flex',
                             height: 10,
                             width: 15,
                             position: 'absolute',
-                            width: 3.4,
-                            height: 2.5,
+                            width: 3.5,
+                            height: 2,
                             layoutOrigin: [0, 0],
-                            transform: [{translate: [-8, 1, -5]}]
+                            transform: [{translate: [1, 2.0, -10]}]
                         }}
                         source={asset('transformer.mov')}
                         playerState={this.state.transformerPlayer}/>
+
+                    <Image style={{
+                        position: 'absolute',
+                        width: 6,
+                        height: 3,
+                        layoutOrigin: [0, 0],
+                        transform: [{translate: [-0.2, 2.5, -10]}]
+                    }}
+                           source={asset('television.png')} />
             </View>
 
 
