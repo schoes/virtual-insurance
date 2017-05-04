@@ -9,7 +9,7 @@ function init(bundle, parent, options) {
     const vr = new VRInstance(bundle, 'virtualInsurance', parent, {
         raycasters: [SimpleRayCaster],
         // Add custom options here
-        cusorVisibility: 'visible',
+        cursorVisibility: 'visible',
         ...options,
     });
     vr.render = function () {
