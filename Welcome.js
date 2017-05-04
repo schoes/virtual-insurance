@@ -28,7 +28,7 @@ export default class WelcomeScreen extends React.Component {
     render = () => {
         return (
             <View>
-                <Pano source={asset('office_02.jpg')}/>
+                <Pano source={asset('office_03.jpg')}/>
                 <View>
                     <Sound source={{mp3: asset('ambient.mp3')}}/>
                 </View>
