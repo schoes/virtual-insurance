@@ -70,6 +70,9 @@ export default class WelcomeScreen extends React.Component {
                  */
             }}>
                 <Pano source={asset('office_small.jpg')}/>
+                <View>
+                    <Sound source={{mp3: asset('ambient.mp3')}}/>
+                </View>
                 <View style={{
                     position: 'absolute',
                     layoutOrigin: [0, 0, 0],
